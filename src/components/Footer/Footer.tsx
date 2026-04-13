@@ -9,9 +9,10 @@ import instagramIcon from '../../assets/instagram.svg'
 export function Footer() {
   return (
     <Container className="footer">
-     
+      <a href="#home" className="logo">
         <span>Vasu</span>
         <span>Patel</span>
+      </a>
       <div>
         <p>
           This Website was made with <img src={reactIcon} alt="React" />
@@ -34,7 +35,7 @@ export function Footer() {
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a
-          href="https://api.whatsapp.com/send/?phone=%2B919712751330&text=Hello+Vinayak+I+found+your+contact+through+portfolio+site.%0A%0A"
+          href="https://api.whatsapp.com/send/?phone=%2B919712751330&text=Hello+Vasu+Patel+I+found+your+contact+through+portfolio+site.%0A%0A"
           target="_blank"
           rel="noreferrer"
         >
