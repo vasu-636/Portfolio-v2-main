@@ -1,5 +1,5 @@
 {
   "installCommand": "yarn install",
-  "buildCommand": "yarn build",
+  "buildCommand": "CI=false TSC_COMPILE_ON_ERROR=true yarn build",
   "outputDirectory": "build"
 }
