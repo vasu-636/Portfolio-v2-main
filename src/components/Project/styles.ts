@@ -69,7 +69,8 @@ export const Container = styled.section`
         .tech-list{
           display: flex;
           align-items: center;
-          gap: 2rem;
+          flex-wrap: wrap;
+          gap: 0.8rem 1.4rem;
           font-size: 1.4rem;
           opacity: 0.6;
         }

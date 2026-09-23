@@ -15,12 +15,13 @@ export const Container = styled.section`
   }
   .hability{
     display: flex;
-    flex-direction: column;
     align-items: center;
-
-    img{
-      width: 3.4rem;
-    }
+    padding: 0.8rem 1.2rem;
+    border: 0.1rem solid var(--green);
+    border-radius: 0.6rem;
+    color: var(--green);
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
   h2{

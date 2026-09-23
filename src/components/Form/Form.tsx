@@ -1,20 +1,10 @@
 import { Container, ContainerSucces } from './styles'
 import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
-import { useEffect, useState } from 'react'
-import validator from 'validator'
+import { useEffect } from 'react'
 
 export function Form() {
   const [state, handleSubmit] = useForm('xknkpqry')
-  const [validEmail, setValidEmail] = useState(false)
-  const [message, setMessage] = useState('')
-  function verifyEmail(email: string) {
-    if (validator.isEmail(email)) {
-      setValidEmail(true)
-    } else {
-      setValidEmail(false)
-    }
-  }
   useEffect(() => {
     if (state.succeeded) {
       toast.success('Email successfully sent!', {
@@ -25,7 +15,7 @@ export function Form() {
         toastId: 'succeeded',
       })
     }
-  })
+  }, [state.succeeded])
   if (state.succeeded) {
     return (
       <ContainerSucces>
@@ -50,9 +40,6 @@ export function Form() {
           id="email"
           type="email"
           name="email"
-          onChange={(e) => {
-            verifyEmail(e.target.value)
-          }}
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -61,9 +48,6 @@ export function Form() {
           placeholder="Send a message to get started."
           id="message"
           name="message"
-          onChange={(e) => {
-            setMessage(e.target.value)
-          }}
         />
         <ValidationError
           prefix="Message"
@@ -72,7 +56,7 @@ export function Form() {
         />
         <button
           type="submit"
-          disabled={state.submitting || !validEmail || !message}
+          disabled={state.submitting}
         >
           Submit
         </button>
