@@ -35,6 +35,7 @@ export function Form() {
     <Container>
       <h2>Get in touch using the form</h2>
       <form onSubmit={handleSubmit}>
+        <ValidationError prefix="Submission" errors={state.errors} />
         <input
           placeholder="Email"
           id="email"
